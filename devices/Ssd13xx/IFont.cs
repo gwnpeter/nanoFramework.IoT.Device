@@ -22,6 +22,11 @@ namespace Iot.Device.Ssd13xx
         public virtual byte Height { get; private set; }
 
         /// <summary>
+        /// Gets a value indicating whether the font is in vertical mode.
+        /// </summary>
+        public virtual bool VerticalMode { get; private set; }
+
+        /// <summary>
         /// Get the binary representation of the ASCII character from the font table.
         /// </summary>
         /// <param name="character">Character to look up.</param>

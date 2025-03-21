@@ -24,7 +24,7 @@ namespace Iot.Device.Ssd13xx
             0x00,       // is command
             0xae,       // turn display off
             0xd5, 0x80, // set display clock divide ratio/oscillator,  set ratio = 0x80
-            0xa8, 0x3f, // set multiplex ratio 0x00-0x3f        
+            0xa8, 0x3f, // set multiplex ratio 0x00-0x3f
             0xd3, 0x00, // set display offset 0x00-0x3f, no offset = 0x00
             0x40 | 0x0, // set display start line 0x40-0x7F
             0x8d, 0x14, // set charge pump,  enable  = 0x14  disable = 0x10
@@ -51,7 +51,7 @@ namespace Iot.Device.Ssd13xx
             0xd5,       // 1 clk div
             0xae,       // turn display off
             0xd5, 0x80, // set display clock divide ratio/oscillator,  set ratio = 0x80
-            0xa8, 0x3f, // set multiplex ratio 0x00-0x3f        
+            0xa8, 0x3f, // set multiplex ratio 0x00-0x3f
             0xd3, 0x1f, // set display offset 0x00-0x3f, no offset = 0x00
             0x40 | 0x0, // set display start line 0x40-0x7F
             0x8d, 0x14, // set charge pump,  enable  = 0x14  disable = 0x10
@@ -77,7 +77,7 @@ namespace Iot.Device.Ssd13xx
             0x00,       // is command
             0xae,       // turn display off
             0xd5, 0x80, // set display clock divide ratio/oscillator,  set ratio = 0x80
-            0xa8, 0x1f, // set multiplex ratio 0x00-0x1f        
+            0xa8, 0x1f, // set multiplex ratio 0x00-0x1f
             0xd3, 0x00, // set display offset 0x00-0x3f, no offset = 0x00
             0x40 | 0x0, // set display start line 0x40-0x7F
             0x8d, 0x14, // set charge pump,  enable  = 0x14  disable = 0x10
@@ -103,7 +103,7 @@ namespace Iot.Device.Ssd13xx
             0x00,       // is command
             0xae,       // turn display off
             0xd5, 0x80, // set display clock divide ratio/oscillator,  set ratio = 0x80
-            0xa8, 0x1f, // set multiplex ratio 0x00-0x1f        
+            0xa8, 0x1f, // set multiplex ratio 0x00-0x1f
             0xd3, 0x00, // set display offset 0x00-0x3f, no offset = 0x00
             0x40 | 0x0, // set display start line 0x40-0x7F
             0x8d, 0x14, // set charge pump,  enable  = 0x14  disable = 0x10
@@ -286,7 +286,7 @@ namespace Iot.Device.Ssd13xx
 
         /// <summary>
         /// Copies buffer content directly to display buffer.
-        /// Y and height must be byte aligned because buffer will 
+        /// Y and height must be byte aligned because buffer will
         /// be copied without any logical operations on existing content.
         /// </summary>
         /// <param name="x">The X coordinate on the screen.</param>
@@ -324,7 +324,7 @@ namespace Iot.Device.Ssd13xx
 
         /// <summary>
         /// Clears portion of display via writing 0x00 directly to display buffer.
-        /// Y and height must be byte aligned because bytes will 
+        /// Y and height must be byte aligned because bytes will
         /// be written without any logical operations on existing content.
         /// </summary>
         /// <param name="x">The X coordinate on the screen.</param>
@@ -361,7 +361,7 @@ namespace Iot.Device.Ssd13xx
         {
             a ^= b;
             b ^= a;
-            a ^= b;     
+            a ^= b;
         }
 
         /// <summary>
@@ -537,9 +537,22 @@ namespace Iot.Device.Ssd13xx
                 }
             }
 
-            byte[] bitMap = Font.Width > 8 ? this.GetDoubleTextBytes(str) : this.GetTextBytes(str);
+            if ((Font.VerticalMode == true) && (Font.Height == 16) && (size == 1) && (Orientation == DisplayOrientation.Landscape))
+            {
+                for (int i = 0; i < str.Length; i++)
+                {
+                    var characterMap = Font[str[i]];
 
-            this.DrawBitmap(x, y, bitMap.Length / Font.Height, Font.Height, bitMap, size);
+                    Array.Copy(characterMap, 0, _genericBuffer, ((y >> 3) * this.Width) + x + (i * Font.Width), Font.Width);
+                    Array.Copy(characterMap, Font.Width, _genericBuffer, (((y >> 3) + 1) * this.Width) + x + (i * Font.Width), Font.Width);
+                }
+            }
+            else
+            {
+                byte[] bitMap = Font.Width > 8 ? this.GetDoubleTextBytes(str) : this.GetTextBytes(str);
+
+                this.DrawBitmap(x, y, bitMap.Length / Font.Height, Font.Height, bitMap, size);
+            }
         }
 
         /// <summary>
@@ -696,12 +709,12 @@ namespace Iot.Device.Ssd13xx
 
         /// <summary>
         /// Reset display controller.
-        /// </summary>        
+        /// </summary>
         private void Reset()
         {
             GpioPin rstPin = _gpioController.OpenPin(_resetPin, PinMode.Output);
             rstPin.Write(PinValue.High);
-            Thread.Sleep(1);                // VDD goes high at start, pause for 1 ms            
+            Thread.Sleep(1);                // VDD goes high at start, pause for 1 ms
             rstPin.Write(PinValue.Low);     // Bring reset low
             Thread.Sleep(10);               // Wait 10 ms
             rstPin.Write(PinValue.High);    // Bring out of reset

@@ -75,7 +75,7 @@ namespace Iot.Device.Modbus.Server
                 try
                 {
                     var request = new Request(buffer);
-                    if (request.DeviceId == _device.DeviceId)
+                    if ((request.DeviceId == _device.DeviceId) || (request.DeviceId == 0) || (request.DeviceId == 0xff))
                     {
                         if (request.IsValid)
                         {
