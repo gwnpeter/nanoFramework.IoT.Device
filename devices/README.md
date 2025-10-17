@@ -5,6 +5,7 @@
 ## Analog/Digital converters
 
 * [![NuGet](https://img.shields.io/nuget/v/nanoFramework.Iot.Device.Seesaw.svg?label=NuGet&style=flat&logo=nuget)](https://www.nuget.org/packages/nanoFramework.Iot.Device.Seesaw/) [Adafruit Seesaw - extension board (ADC, PWM, GPIO expander)](Seesaw)
+* [![NuGet](https://img.shields.io/nuget/v/nanoFramework.Iot.Device.Adc128D818.svg?label=NuGet&style=flat&logo=nuget)](https://www.nuget.org/packages/nanoFramework.Iot.Device.Adc128D818/) [ADC128D818 - Analog to Digital Converter](Adc128D818)
 * [![NuGet](https://img.shields.io/nuget/v/nanoFramework.Iot.Device.Ads1115.svg?label=NuGet&style=flat&logo=nuget)](https://www.nuget.org/packages/nanoFramework.Iot.Device.Ads1115/) [ADS1115 - Analog to Digital Converter](Ads1115)
 * [![NuGet](https://img.shields.io/nuget/v/nanoFramework.Iot.Device.Axp192.svg?label=NuGet&style=flat&logo=nuget)](https://www.nuget.org/packages/nanoFramework.Iot.Device.Axp192/) [AXP192 - Enhanced single Cell Li-Battery and Power System Management IC](Axp192)
 * [![NuGet](https://img.shields.io/nuget/v/nanoFramework.Iot.Device.Hx711.svg?label=NuGet&style=flat&logo=nuget)](https://www.nuget.org/packages/nanoFramework.Iot.Device.Hx711/) [Hx711 (M5Stack WEIGHT)](Hx711)
@@ -113,6 +114,7 @@
 
 * [![NuGet](https://img.shields.io/nuget/v/nanoFramework.Iot.Device.Uln2003.svg?label=NuGet&style=flat&logo=nuget)](https://www.nuget.org/packages/nanoFramework.Iot.Device.Uln2003/) [28BYJ-48 Stepper Motor 5V 4-Phase 5-Wire & ULN2003 Driver Board](Uln2003)
 * [![NuGet](https://img.shields.io/nuget/v/nanoFramework.Iot.Device.A4988.svg?label=NuGet&style=flat&logo=nuget)](https://www.nuget.org/packages/nanoFramework.Iot.Device.A4988/) [4-Wire stepper motor & A4988 driver board](A4988)
+* [![NuGet](https://img.shields.io/nuget/v/nanoFramework.Iot.Device.Drv8825.svg?label=NuGet&style=flat&logo=nuget)](https://www.nuget.org/packages/nanoFramework.Iot.Device.Drv8825/) [4-Wire stepper motor & Drv8825 driver board](Drv8825)
 * [![NuGet](https://img.shields.io/nuget/v/nanoFramework.Iot.Device.DCMotor.svg?label=NuGet&style=flat&logo=nuget)](https://www.nuget.org/packages/nanoFramework.Iot.Device.DCMotor/) [DC Motor Controller](DCMotor)
 * [![NuGet](https://img.shields.io/nuget/v/nanoFramework.Iot.Device.ServoMotor.svg?label=NuGet&style=flat&logo=nuget)](https://www.nuget.org/packages/nanoFramework.Iot.Device.ServoMotor/) [Servo Motor](ServoMotor)
 
@@ -231,6 +233,7 @@
 * [![NuGet](https://img.shields.io/nuget/v/nanoFramework.Iot.Device.Chsc6540.svg?label=NuGet&style=flat&logo=nuget)](https://www.nuget.org/packages/nanoFramework.Iot.Device.Chsc6540/) [CHSC6540 - Touch screen controller](Chsc6540)
 * [![NuGet](https://img.shields.io/nuget/v/nanoFramework.Iot.Device.Ft6xx6x.svg?label=NuGet&style=flat&logo=nuget)](https://www.nuget.org/packages/nanoFramework.Iot.Device.Ft6xx6x/) [Ft6xx6x/Ft6336GU - Touch screen controller](Ft6xx6x)
 * [![NuGet](https://img.shields.io/nuget/v/nanoFramework.Iot.Device.Mpr121.svg?label=NuGet&style=flat&logo=nuget)](https://www.nuget.org/packages/nanoFramework.Iot.Device.Mpr121/) [MPR121 - Proximity Capacitive Touch Sensor Controller](Mpr121)
+* [![NuGet](https://img.shields.io/nuget/v/nanoFramework.Iot.Device.XPT2046.svg?label=NuGet&style=flat&logo=nuget)](https://www.nuget.org/packages/nanoFramework.Iot.Device.XPT2046/) [XPT2046 - Touch screen controller](XPT2046)
 
 ## Wireless communication modules
 
@@ -303,6 +306,7 @@
 
 * [![NuGet](https://img.shields.io/nuget/v/nanoFramework.Iot.Device.Seesaw.svg?label=NuGet&style=flat&logo=nuget)](https://www.nuget.org/packages/nanoFramework.Iot.Device.Seesaw/) [Adafruit Seesaw - extension board (ADC, PWM, GPIO expander)](Seesaw)
 * [![NuGet](https://img.shields.io/nuget/v/nanoFramework.Iot.Device.DhcpServer.svg?label=NuGet&style=flat&logo=nuget)](https://www.nuget.org/packages/nanoFramework.Iot.Device.DhcpServer/) [DHCP Server](DhcpServer)
+* [![NuGet](https://img.shields.io/nuget/v/nanoFramework.Iot.Device.DnsServer.svg?label=NuGet&style=flat&logo=nuget)](https://www.nuget.org/packages/nanoFramework.Iot.Device.DnsServer/) [DNS Server](DnsServer)
 * [![NuGet](https://img.shields.io/nuget/v/nanoFramework.Iot.Device.Modbus.svg?label=NuGet&style=flat&logo=nuget)](https://www.nuget.org/packages/nanoFramework.Iot.Device.Modbus/) [Modbus - Machine to machine communication protocol](Modbus)
 * [![NuGet](https://img.shields.io/nuget/v/nanoFramework.Iot.Device.MulticastDns.svg?label=NuGet&style=flat&logo=nuget)](https://www.nuget.org/packages/nanoFramework.Iot.Device.MulticastDns/) [Multicast DNS](MulticastDns)
 
